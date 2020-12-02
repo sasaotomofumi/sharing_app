@@ -1,0 +1,29 @@
+.box {
+    margin: 2em 0;
+    background: #dcefff;
+}
+.box .box-title {
+    font-size: 24px;
+    background: #5fb3f5;
+    padding: 4px;
+    text-align: left;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.box p {
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 32px;
+}
+
+.box-btn {
+  clear: both;
+  content: "";
+  display: flex;
+  justify-content: flex-end;
+}
+.btn {
+  margin: 10px;
+  font-size: 26px;
+}
