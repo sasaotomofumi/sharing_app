@@ -56,6 +56,7 @@
           <%= f.password_field :password_confirmation, autocomplete: "off"%>
         </div>
       </div>
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
       <div class='actions'>
         <%= f.submit "Create Account", class: 'btn'%>
       </div>
