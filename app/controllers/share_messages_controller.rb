@@ -1,0 +1,2 @@
+class ShareMessagesController < ApplicationController
+end

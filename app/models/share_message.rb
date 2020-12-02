@@ -1,0 +1,2 @@
+class ShareMessage < ApplicationRecord
+end
