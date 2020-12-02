@@ -1,18 +1,36 @@
 <div class="side-bar-header">
   <div class="header-name">
-    <%= link_to current_user.name, edit_user_path(current_user) %>
+    <%= link_to current_user.name, user_path(current_user) %>
+  </div>
+  <div class="header-name">
+    <%= link_to "トップページ", root_path %>
   </div>
   <div class="create-room">
-    <%= link_to "チャットを作成する", new_room_path %>
+    <%= link_to "掲示板",  new_suggestion_path %>
   </div>
+  <div class="create-room">
+    <%= link_to "チャットルーム", new_room_path %>
+  </div>
+
 </div>
 
 <div class="rooms">
-  <% current_user.rooms.each do |room| %>
-  <div class="room">
-    <div class="room-name">
-      <%= link_to room.name, room_messages_path(room) %>
+
+  <div class="room-chat">
+    <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <%= link_to room.name, room_messages_path(room) %>
+      </div>
     </div>
+    <% end %>
+    <% @suggestions.each do |suggestion| %>
+    <div class="room">
+      <div class="suggestion-name">
+        <%= link_to suggestion.content, suggestion_share_messages_path(suggestion) %>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
+
 </div>

@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
 
   def index
-    
+    @suggestions = Suggestion.all
   end
 
   def new

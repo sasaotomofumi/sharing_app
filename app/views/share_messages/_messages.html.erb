@@ -1,0 +1,32 @@
+<% @share_messages.each do |share_message| %>
+<div class="message">
+  <div class="upper-message">
+    <div class="message-user">
+      <%= share_message.user.name %>
+    </div>
+    <div class="message-date">
+      <%= l share_message.created_at %>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message-content">
+      <%= share_message.content %>
+    </div>
+    <div class="message-content">
+      <%= image_tag share_message.image.variant(resize: '500x500'), class: 'message-image' if share_message.image.attached? %>
+    </div>
+
+    <% if current_user.id == share_message.user.id %>
+      <div class="message-btn">
+        <div class="message-btn-left">
+          <%= link_to "編集", edit_suggestion_share_message_path(share_message.suggestion.id, share_message.id) %>
+        </div>
+        <div class="message-btn-right">
+          <%= link_to "削除", suggestion_share_message_path(share_message.suggestion.id, share_message.id), method: :delete %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% end %>

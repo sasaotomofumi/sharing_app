@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
+  
+  def  show
+    @user = User.find(params[:id])
+    @messages = Message.includes(:user).order('created_at DESC')
+    @share_messages = ShareMessage.includes(:user)
+  end
 
   def edit 
 
   end
-  
+
   def update
     if current_user.update(user_params)
       redirect_to root_path

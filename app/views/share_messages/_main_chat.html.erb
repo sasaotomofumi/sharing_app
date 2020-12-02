@@ -1,0 +1,27 @@
+<div class="chat-header">
+  <div class="left-header">
+    <div class="header-title">
+      <%= link_to @suggestion.content, suggestion_path(@suggestion.id) %>
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%= link_to "議題を終了する", suggestion_path(@suggestion), method: :delete %>
+    </div>
+  </div>
+</div>
+
+<%= form_with model: [@suggestion, @share_message],url:  suggestion_share_messages_path, class: 'form', local: true do |f| %>
+<div class="form-input">
+  <%= f.text_area :content, class: 'form-message', placeholder: '100文字以内' ,maxlength:"100" ,size:"30x10" %>
+  <label class="form-image">
+    <span class="image-file">画像</span>
+    <%= f.file_field :image, class: 'hidden' %>
+  </label>
+</div>
+<%= f.submit '送信', class: 'form-submit' %>
+<% end %>
+
+<div class="messages">
+  <%= render "messages" %>
+</div>

@@ -1,0 +1,44 @@
+<div class='chat-room-form'>
+  <h1>新規プロジェクト</h1>
+  <%=form_with model: @suggestion, local: true do |f|%>
+  <div class='chat-room-form__field'>
+    <div class='chat-room-form__field--left'>
+      <%= f.label :テーマ, class: 'chat-room-form__label'%>
+    </div>
+    <div class='chat-room-form__field--right'>
+      <%= f.text_field :content, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+    </div>
+  </div>
+  <div class='chat-room-form__field'>
+    <div class='chat-room-form__field--left'>
+      <%= f.label :目的, class: 'chat-room-form__label'%>
+    </div>
+    <div class='chat-room-form__field--right'>
+      <%= f.text_field :purpose, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+    </div>
+  </div>
+  <div class='chat-room-form__field'>
+    <div class='chat-room-form__field--left'>
+      <%= f.label :詳細, class: 'chat-room-form__label'%>
+    </div>
+    <div class='chat-room-form__field--right'>
+      <%= f.text_field :detail, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+    </div>
+  </div>
+  <div class='chat-room-form__field'>
+    <div class='chat-room-form__field--left'>
+      <%= f.label :期日, class: 'chat-room-form__label'%>
+    </div>
+    <div class='chat-room-form__field--right'>
+      <%= f.text_field :deadline, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+    </div>
+  </div>
+
+  <div class='chat-room-form__field'>
+    <div class='chat-room-form__field--left'></div>
+    <div class='chat-room-form__field--right'>
+      <%= f.submit class: 'chat-room-form__action-btn'%>
+    </div>
+  </div>
+  <% end %>
+</div>

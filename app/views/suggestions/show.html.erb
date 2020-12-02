@@ -1,0 +1,27 @@
+<div class='chat-room-form'>
+  <div class="box">
+    <div class="box-title">タイトル</div>
+    <p><%= @suggestion.content %></p>
+  </div>
+  <div class="box">
+    <div class="box-title">目的</div>
+    <p><%= @suggestion.purpose %></p>
+  </div>
+  <div class="box">
+    <div class="box-title">期限</div>
+    <p><%= @suggestion.deadline %></p>
+  </div>
+  <div class="box">
+    <div class="box-title">内容</div>
+    <p><%= @suggestion.detail %></p>
+  </div>
+  
+
+  <div class='box-btn'>
+    <%= link_to "編集", edit_suggestion_path,  class: 'btn' %>
+    <%= link_to "削除", suggestion_path, method: :delete, class: 'btn'%>
+    <%= link_to "戻る", :back, class: 'btn'%>
+  </div>
+
+
+</div>

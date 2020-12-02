@@ -1,0 +1,39 @@
+<div class='chat-room-form'>
+  <div class="box">
+    <div class="box-title">タイトル</div>
+    <p><%= @suggestion.content %></p>
+  </div>
+  <div class="box">
+    <div class="box-title">目的</div>
+    <p><%= @suggestion.purpose %></p>
+  </div>
+  <div class="box">
+    <div class="box-title">期限</div>
+    <p><%= @suggestion.deadline %></p>
+  </div>
+  <div class="box">
+    <div class="box-title">内容</div>
+    <p><%= @suggestion.detail %></p>
+  </div>
+  <div class="box">
+    <div class="box-title">写真</div>
+    <p></p>
+  </div>
+
+  <%= form_with model: [@suggestion, @share_message],url:  suggestion_share_message_path, class: 'form', local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_area :content, class: 'form-message', maxlength:"100" ,size:"30x10" %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+  <% end %>
+  <br>
+    <div class='box-btn'>
+      <%= link_to "トップページへ", root_path,  class: 'btn' %>
+      <%= link_to "戻る", :back, class: 'btn'%>
+    </div>
+</div>
+
