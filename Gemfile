@@ -62,3 +62,9 @@ group :development do
   gem 'rubocop', require: false
 end
 gem "aws-sdk-s3", require: false
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'dotenv-rails'
+group :production do
+  gem 'unicorn', '5.4.1'
+end
