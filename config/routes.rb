@@ -5,10 +5,13 @@ Rails.application.routes.draw do
    end
    
    root to: "rooms#index"
-   resources :users, only: [:edit, :update, :show] 
+   resources :users, only: [:edit, :update, :show, :destroy] 
  
  resources :suggestions do 
   resources :share_messages, only: [:index, :create, :destroy, :edit, :update]
+   collection do 
+    get 'search'
+   end
  end
 
  resources :rooms, only: [:new, :create, :destroy] do

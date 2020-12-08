@@ -33,7 +33,7 @@
   text-decoration: none;
 }
 .rooms {
-  background-color: rgb(163, 217, 235);
+  background-color:#253141;
   height: calc(100vh - 100px);
   padding: 10px 20px;
   font-size: 18px;
@@ -84,10 +84,18 @@
   overflow: scroll;
 }
 .messages-sharing {
-  background-color: #FAFAFA;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.9);
   height: calc(100vh - 90px);
   padding: 46px 40px 0;
   overflow: scroll;
+  background-image: url("images/top3.png");
+  background-color:rgba(255,255,255,0.2);
+  background-blend-mode:lighten;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
 }
 .messages-title {
   font-size: 36px;

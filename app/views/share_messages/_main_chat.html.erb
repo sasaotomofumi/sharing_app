@@ -3,10 +3,13 @@
     <div class="header-title">
       <%= link_to @suggestion.content, suggestion_path(@suggestion.id) %>
     </div>
+    
   </div>
   <div class="right-header">
     <div class="header-button">
+      <% if current_user.id == @suggestion.user.id %>
       <%= link_to "議題を終了する", suggestion_path(@suggestion), method: :delete %>
+      <% end %>
     </div>
   </div>
 </div>

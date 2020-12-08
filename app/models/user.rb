@@ -4,11 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :room_users
+  has_many :room_users,  dependent: :destroy
   has_many :rooms, through: :room_users
-  has_many :messages
+  has_many :messages,  dependent: :destroy
   has_many :suggestions
-  has_many :share_messages
+  has_many :share_messages, dependent: :destroy
+
+
 
   validates :name, :position, :occupation, presence: true
 
