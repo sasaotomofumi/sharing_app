@@ -15,11 +15,13 @@
     <div class="box-title">内容</div>
     <p><%= @suggestion.detail %></p>
   </div>
-  
+
 
   <div class='box-btn'>
-    <%= link_to "編集", edit_suggestion_path,  class: 'btn' %>
-    <%= link_to "削除", suggestion_path, method: :delete, class: 'btn'%>
+    <% if current_user.id == @suggestion.user.id %>
+      <%= link_to "編集", edit_suggestion_path,  class: 'btn' %>
+      <%= link_to "削除", suggestion_path, method: :delete, class: 'btn'%>
+    <% end %>
     <%= link_to "戻る", :back, class: 'btn'%>
   </div>
 
